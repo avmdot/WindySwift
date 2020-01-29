@@ -166,20 +166,21 @@ internal struct WindyHTML {
                         const { map, broadcast } = windyAPI;
                         globalMap = map;
 
-                        var streetMapPane = globalMap.createPane('OpenStreetMap');
+                        var streetMapPane = globalMap.createPane('streetMap');
                         streetMapPane.style.zIndex = 200;
 
                         var topLayer = L.tileLayer('http://b.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                             attribution: '&copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap contributors</a>',
                             minZoom: 4,
                             maxZoom: 13,
-                            pane: 'streetMapPane'
+                            pane: 'streetMap'
                         }).addTo(map);
                         topLayer.setOpacity('0');
 
                         map.on('zoomend', function() {
                             if (map.getZoom() >= 12) {
                                 topLayer.setOpacity('1');
+                                topLayer.bringToBack();
                             } else {
                                 topLayer.setOpacity('0');
                             }
