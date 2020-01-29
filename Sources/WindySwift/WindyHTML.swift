@@ -166,6 +166,25 @@ internal struct WindyHTML {
                         const { map, broadcast } = windyAPI;
                         globalMap = map;
 
+                        map.options.minZoom = 4;
+                        map.options.maxZoom = 17;
+
+                        var topLayer = L.tileLayer('http://b.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                            attribution: 'Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, ',
+                            minZoom: 12,
+                            maxZoom: 17
+                        }).addTo(map);
+                        topLayer.setOpacity('0');
+
+                        map.on('zoomend', function() {
+                            if (map.getZoom() >= 12) {
+                                topLayer.setOpacity('1');
+                            } else {
+                                topLayer.setOpacity('0');
+                            }
+                        });
+                        map.setZoom(14);
+
                         let events = [
                             'zoomstart',
                             'zoomend',
