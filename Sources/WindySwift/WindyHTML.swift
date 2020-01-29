@@ -167,7 +167,7 @@ internal struct WindyHTML {
                         globalMap = map;
 
                         var streetMapPane = globalMap.createPane('streetMap');
-                        streetMapPane.style.zIndex = 625;
+                        streetMapPane.style.zIndex = 'auto';
 
                         var topLayer = L.tileLayer('http://b.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                             attribution: '&copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap contributors</a>',
@@ -180,7 +180,6 @@ internal struct WindyHTML {
                         map.on('zoomend', function() {
                             if (map.getZoom() >= 12) {
                                 topLayer.setOpacity('1');
-                                topLayer.bringToBack();
                             } else {
                                 topLayer.setOpacity('0');
                             }
