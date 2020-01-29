@@ -166,11 +166,14 @@ internal struct WindyHTML {
                         const { map, broadcast } = windyAPI;
                         globalMap = map;
 
+                        var streetMapPane = globalMap.createPane('OpenStreetMap');
+                        streetMapPane.style.zIndex = 550;
+
                         var topLayer = L.tileLayer('http://b.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                             attribution: '&copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap contributors</a>',
                             minZoom: 4,
                             maxZoom: 13,
-                            pane: 'mapPane'
+                            pane: 'streetMapPane'
                         }).addTo(map);
                         topLayer.setOpacity('0');
 
