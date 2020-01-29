@@ -172,7 +172,7 @@ internal struct WindyHTML {
                         var topLayer = L.tileLayer('http://b.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                             attribution: 'Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, ',
                             minZoom: 12,
-                            maxZoom: 17
+                            maxZoom: 17,
                             pane: 'mapPane'
                         }).addTo(map);
                         topLayer.setOpacity('0');
