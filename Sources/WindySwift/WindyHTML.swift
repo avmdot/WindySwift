@@ -166,15 +166,11 @@ internal struct WindyHTML {
                         const { map, broadcast } = windyAPI;
                         globalMap = map;
 
-                        map.options.minZoom = 4;
-                        map.options.maxZoom = 17;
-
                         var topLayer = L.tileLayer('http://b.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                            attribution: 'Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, ',
-                            minZoom: 12,
-                            maxZoom: 17,
-                            pane: 'mapPane',
-                            style: 'https://github.com/openmaptiles/fiord-color-gl-style/blob/master/style.json'
+                            attribution: '&copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap contributors</a>',
+                            minZoom: 4,
+                            maxZoom: 13,
+                            pane: 'mapPane'
                         }).addTo(map);
                         topLayer.setOpacity('0');
 
@@ -185,7 +181,6 @@ internal struct WindyHTML {
                                 topLayer.setOpacity('0');
                             }
                         });
-                        map.setZoom(14);
 
                         let events = [
                             'zoomstart',
