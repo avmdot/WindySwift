@@ -173,6 +173,7 @@ internal struct WindyHTML {
                             attribution: 'Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, ',
                             minZoom: 12,
                             maxZoom: 17
+                            pane: 'mapPane'
                         }).addTo(map);
                         topLayer.setOpacity('0');
 
