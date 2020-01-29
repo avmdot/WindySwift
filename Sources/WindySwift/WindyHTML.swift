@@ -173,7 +173,8 @@ internal struct WindyHTML {
                             attribution: 'Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, ',
                             minZoom: 12,
                             maxZoom: 17,
-                            pane: 'mapPane'
+                            pane: 'mapPane',
+                            style: 'https://github.com/openmaptiles/fiord-color-gl-style/blob/master/style.json'
                         }).addTo(map);
                         topLayer.setOpacity('0');
 
