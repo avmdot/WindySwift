@@ -171,8 +171,8 @@ internal struct WindyHTML {
 
                         var topLayer = L.tileLayer('http://b.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                             attribution: '&copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap contributors</a>',
-                            minZoom: 4,
-                            maxZoom: 13,
+                            minZoom: 12,
+                            maxZoom: 20,
                             pane: 'streetMap'
                         }).addTo(map);
                         topLayer.setOpacity('0');
