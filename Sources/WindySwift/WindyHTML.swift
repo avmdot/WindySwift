@@ -171,16 +171,16 @@ internal struct WindyHTML {
 
                         var topLayer = L.tileLayer('http://b.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                             attribution: '&copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap contributors</a>',
-                            minZoom: 4,
-                            maxZoom: 20,
                             pane: 'streetMap'
                         }).addTo(map);
                         topLayer.setOpacity('0');
 
+                        map.options.minZoom = 4;
+                        map.options.maxZoom = 18;
+
                         map.on('zoomend', function() {
                             if (map.getZoom() >= 11) {
                                 topLayer.setOpacity('1');
-                                topLayer.bringToBack();
                             } else {
                                 topLayer.setOpacity('0');
                             }
