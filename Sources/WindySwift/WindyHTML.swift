@@ -169,7 +169,7 @@ internal struct WindyHTML {
                         var streetMapPane = globalMap.createPane('streetMap');
                         streetMapPane.style.zIndex = 'auto';
 
-                        var topLayer = L.tileLayer('http://b.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        var topLayer = L.tileLayer('https://b.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                             attribution: '&copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap contributors</a>',
                             pane: 'streetMap'
                         }).addTo(map);
